@@ -1,2 +1,2 @@
 # db_5sem
-db work
+Database course
