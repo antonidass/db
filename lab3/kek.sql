@@ -1,0 +1,6 @@
+
+alter session set "_ORACLE_SCRIPT"=true;
+
+CREATE USER abc IDENTIFIED BY abc;
+
+GRANT CONNECT, RESOURCE TO abc;
