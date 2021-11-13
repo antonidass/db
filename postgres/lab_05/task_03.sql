@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS ShadowCompanies (
 );
 
 INSERT INTO ShadowCompanies
-SELECT * FROM json_object('{company_id, name, sector}', '{1, DELL, Technology}');
+SELECT * FROM json_object('{company_id, name, sector}', '{3, Apple, Technology}');
 
 SELECT * FROM ShadowCompanies;
 

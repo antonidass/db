@@ -1,5 +1,6 @@
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -55,16 +56,18 @@ public class Main {
         ResultSet resultSet = preparedStatement.executeQuery();
 
 
-        System.out.println("company_name  ---  sector --- income --- row_number");
+        System.out.format("%20s%26s%20s%20s\n", "company_name", "sector", "income", "row_number");
         while (resultSet.next()) {
-            System.out.println(resultSet.getString(1) + " --- " +
-                                resultSet.getString(2) + " --- " +
-                                resultSet.getDouble(3) + " --- " +
-                                resultSet.getString(4) );
+            System.out.format("%20s%26s%20s%20s\n", resultSet.getString(1),
+                    resultSet.getString(2), resultSet.getDouble(3),
+                    resultSet.getString(4));
         }
         System.out.println("\n");
     }
 
+
+    // 4. Выполнить запрос к метаданным;
+    // Вывод таблиц из схемы
     public static void getTables(Connection connection, String schema) throws SQLException {
         String query = "SELECT table_name FROM information_schema.tables WHERE table_schema = ?";
 
@@ -80,6 +83,8 @@ public class Main {
         System.out.println("\n");
     }
 
+    // 5. Вызвать скалярную функцию (написанную в третьей лабораторной работе);
+    // Вывод суммы свободного кэша в заданном секторе
     public static void sumFreeCash(Connection connection, String sector_name) throws SQLException {
         String query = "{? = call SumFreeCash(?)}";
         int sum = 0;
@@ -93,6 +98,9 @@ public class Main {
         System.out.println("SumFreeCash companies in sector " + sector_name + "  = " + sum + "\n\n");
     }
 
+
+    // 6. Вызвать многооператорную или табличную функцию (написанную в третьей работе)
+    // Вывод краткой информации о владельце (имя, возраст, оборот)
     public static void getShortInfo(Connection connection, int id_owner) throws SQLException {
         String query = "SELECT * FROM OwnerShortRow(?)";
 
@@ -101,18 +109,19 @@ public class Main {
 
         ResultSet resultSet = preparedStatement.executeQuery();
         System.out.println("Short info about user with id = " + id_owner + " : ");
-        System.out.println("name     --- age   --- turnover\n");
+        System.out.format("%10s%10s%10s\n", "name", "age", "turnover");
 
         while (resultSet.next()) {
-            System.out.println(resultSet.getString(1) + "  --- " +
-                                resultSet.getInt(2) + "    --- " +
-                                resultSet.getInt(3));
+            System.out.format("%10s%10s%10s\n", resultSet.getString(1),
+                    resultSet.getInt(2),
+                    resultSet.getInt(3));
         }
 
         System.out.println("\n");
     }
 
-
+    // 7. Вызвать хранимую процедуру (написанную в третьей лабораторной работе);
+    //  Обновить кэш владельца баланса с id = id_balance на increment
     public static void updateBalance(Connection connection, int id_balance, int increment) throws SQLException {
         String query = "CALL UpdateFreeCash(?, ?)";
 
@@ -123,7 +132,8 @@ public class Main {
         System.out.println("Balance table was updated!" + "\n\n");
     }
 
-
+    // 8. Вызвать системную функцию или процедуру;
+    // Вывести название текущей таблицы
     public static void currentDatabase(Connection connection) throws SQLException {
         String query = "SELECT current_database()";
 
@@ -136,7 +146,8 @@ public class Main {
         }
     }
 
-
+    // 9. Создать таблицу в базе данных, соответствующую тематике БД;
+    // Таблица людей с шорт позициями
     public static void createTable(Connection connection) throws SQLException {
         String query = "CREATE TABLE IF NOT EXISTS ShortPeoples (" +
                 "id INT PRIMARY KEY," +
@@ -149,6 +160,8 @@ public class Main {
         System.out.println("Success!\n\n");
     }
 
+    // 10. Выполнить вставку данных в созданную таблицу с использованием инструкции INSERT или COPY
+    // Вставить в таблицу значения
     public static  void insertIntoTable(Connection connection, int id, int as, int debt) throws SQLException {
         String query = "INSERT INTO shortpeoples(id, available_short, debt) VALUES (?, ?, ?)";
 
@@ -159,6 +172,17 @@ public class Main {
         preparedStatement.execute();
 
         System.out.println("Success!");
+    }
+
+    public static void  delete(Connection connection, String ticker) throws SQLException {
+        String query = "DELETE FROM Company WHERE Company.ticker = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, ticker);
+
+        preparedStatement.execute();
+
+        System.out.println("SUCCESS");
     }
 
     static String menu[] = {
@@ -172,6 +196,7 @@ public class Main {
             "8. System stored function call.",
             "9. Create new table.",
             "10. Insert into new table.",
+            "12 Delete",
             "11. Exit."
     };
 
@@ -198,7 +223,7 @@ public class Main {
         System.out.print("Choose action: ");
         int action = scanner.nextInt();
 
-        while (action > 11 || action < 1)  {
+        while (action > 12 || action < 1)  {
             System.out.print("Invalid input. Enter action again: ");
             action = scanner.nextInt();
         }
@@ -232,7 +257,10 @@ public class Main {
                 createTable(conn);
                 break;
             case 10:
-                insertIntoTable(conn, 2, 5, 5);
+                insertIntoTable(conn, new Random().nextInt() % 100 + 100, 5, 5);
+                break;
+            case 12:
+                delete(conn, "wmtjp");
                 break;
             default:
                 conn.close();

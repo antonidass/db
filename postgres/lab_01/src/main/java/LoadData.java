@@ -134,10 +134,10 @@ public class LoadData {
 
     public void loadTables() throws SQLException, IOException {
         initConnection();
-//        loadBalance();
-//        loadCompany();
-//        loadCompanyOwner();
-//        loadStockExchange();
-//        loadStockMarket();
+        loadBalance();
+        loadCompany();
+        loadCompanyOwner();
+        loadStockExchange();
+        loadStockMarket();
     }
 }

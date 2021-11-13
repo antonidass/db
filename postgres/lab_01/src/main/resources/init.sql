@@ -1,3 +1,10 @@
+DROP TABLE StockMarket;
+DROP TABLE CompanyOwner;
+DROP TABLE Company;
+DROP TABLE StockExchange;
+DROP TABLE Balance;
+
+
 CREATE TABLE IF NOT EXISTS Balance(
                         id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
                         free_cash INTEGER,
@@ -14,7 +21,7 @@ CREATE TABLE IF NOT EXISTS Company(
                         sector VARCHAR(22) NOT NULL,
                         country VARCHAR(20) NOT NULL,
                         balance_id INTEGER NOT NULL,
-                        FOREIGN KEY (balance_id) REFERENCES Balance(id),
+                        FOREIGN KEY (balance_id) REFERENCES Balance(id) MATCH SIMPLE ON DELETE CASCADE,
                         shadow CHAR(3) NOT NULL CHECK (shadow IN ('YES', 'NO'))
 );
 
@@ -26,7 +33,7 @@ CREATE TABLE IF NOT EXISTS CompanyOwner(
                              sex CHAR(1) NOT NULL CHECK (sex IN ('M', 'F')),
                              country VARCHAR(20) NOT NULL,
                              balance_id INTEGER NOT NULL,
-                             FOREIGN KEY (balance_id) REFERENCES Balance(id)
+                             FOREIGN KEY (balance_id) REFERENCES Balance(id) MATCH SIMPLE ON DELETE CASCADE
 );
 
 
@@ -43,8 +50,8 @@ CREATE TABLE IF NOT EXISTS StockMarket(
                             ticker VARCHAR(6) NOT NULL,
                             owner_id INTEGER NOT NULL,
                             stock_exchange INTEGER NOT NULL,
-                            FOREIGN KEY (ticker) REFERENCES Company(ticker),
-                            FOREIGN KEY (owner_id) REFERENCES CompanyOwner(id),
-                            FOREIGN KEY (stock_exchange) REFERENCES StockExchange(id),
+                            FOREIGN KEY (ticker) REFERENCES Company(ticker) MATCH SIMPLE ON DELETE CASCADE ,
+                            FOREIGN KEY (owner_id) REFERENCES CompanyOwner(id) MATCH SIMPLE ON DELETE CASCADE ,
+                            FOREIGN KEY (stock_exchange) REFERENCES StockExchange(id) MATCH SIMPLE ON DELETE CASCADE ,
                             weekend CHAR(3) NOT NULL CHECK (weekend IN ('YES', 'NO'))
 );

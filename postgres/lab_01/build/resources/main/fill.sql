@@ -1,1 +1,0 @@
-ALTER SEQUENCE companyowner_id_seq RESTART WITH 1;

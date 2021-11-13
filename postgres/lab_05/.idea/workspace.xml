@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcf998e-715d-4894-83ea-59cdf207c8b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/data/balance.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.idea/lab_06.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_02.sql" beforeDir="false" afterPath="$PROJECT_DIR$/task_02.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_03.sql" beforeDir="false" afterPath="$PROJECT_DIR$/task_03.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_04_1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/task_04_1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_04_2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/task_04_2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_04_4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/task_04_4.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab_06/src/lab_06/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab_06/src/lab_06/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +29,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="20V9B18kV29SDgSJGu7zFOacfLU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -19,10 +44,29 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenDatabaseViewOnStart" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RunManager" selected="Database Script.task_04_1.sql">
+    <configuration name="task_01.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/task_01.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="task_04_1.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/task_04_1.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.task_04_1.sql" />
+        <item itemvalue="Database Script.task_01.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
 </project>

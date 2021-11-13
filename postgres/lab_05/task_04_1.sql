@@ -7,11 +7,19 @@ CREATE TABLE IF NOT EXISTS balance_id_income (
     income REAL
 );
 
+
+SELECT * FROM balance_id_income;
+
 SELECT * FROM balance_import, json_populate_record(null::balance_id_income, doc);
 
 SELECT id, income
 FROM balance_import, json_populate_record(null::balance_id_income, doc)
 WHERE income > 80;
+
+
+
+
+
 
 SELECT * FROM balance_import;
 

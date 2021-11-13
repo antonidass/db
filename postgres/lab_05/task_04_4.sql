@@ -3,6 +3,6 @@
 
 UPDATE city
 SET doc = doc || '{"id":3}'::jsonb
-WHERE (doc->'id')::INT = 2;
+WHERE (doc->'id')::INT = 1;
 
 SELECT * FROM city;

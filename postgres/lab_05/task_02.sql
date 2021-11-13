@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS Balance_copy(
 
 CREATE TABLE IF NOT EXISTS balance_import(doc json);
 
--- \COPY balance_import FROM '/Users/akrik/Desktop/db/db/postgres/lab_05/data/balance.json';
+
+\COPY balance_import FROM '/Users/akrik/Desktop/db/db/postgres/lab_05/data/balance.json';
 
 SELECT * FROM balance_import;
 
