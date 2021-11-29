@@ -1,4 +1,0 @@
-CREATE OR REPLACE FUNCTION AvgAgeOwner(owner_name VARCHAR)
-RETURNS INTEGER
-AS 'SQL_CLR.Main.AverageAgeOwner'
-LANGUAGE java;
