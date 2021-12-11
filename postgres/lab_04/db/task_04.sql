@@ -8,4 +8,4 @@ statement = plpy.prepare("INSERT INTO Balance(free_cash, stocks_amount, turnover
 plpy.execute(statement, [free_cash, stocks_amount,  turnover,  total_assets, income])
 $$ language plpython3u;
 
-call add_balance(230, 20, 30, 552, 32.1);
+call add_balance(777, 20, 30, 552, 32.1);

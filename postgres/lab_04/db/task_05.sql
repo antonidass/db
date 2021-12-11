@@ -20,5 +20,5 @@ execute procedure delete_balance_record();
 
 
 DELETE FROM company
-WHERE ticker = 'mip';
+WHERE ticker = 'hbu';
 

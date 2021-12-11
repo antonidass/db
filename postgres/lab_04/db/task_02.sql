@@ -2,7 +2,7 @@
 --Пользовательскую агрегатную функцию CLR
 --количество владельцов с именем name
 
-CREATE OR REPLACE FUNCTION get_count_person_by_name(name varchar) returns varchar
+CREATE OR REPLACE PROCEDURE get_count_person_by_name(name varchar)
 as $$
 count = 0
 ppl = plpy.execute("SELECT * FROM CompanyOwner")
