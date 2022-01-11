@@ -120,7 +120,7 @@ public class LoadData {
     private void initConnection() {
         try  {
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5433/postgres",
-                    "postgres", "password");
+                    "postgres", "postgres");
 
             if (connection != null) {
                 System.out.println("Connected !");
